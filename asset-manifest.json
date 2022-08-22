@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/coin-market-info/static/css/main.363a26e6.css",
+    "main.js": "/coin-market-info/static/js/main.629498d1.js",
+    "index.html": "/coin-market-info/index.html",
+    "main.363a26e6.css.map": "/coin-market-info/static/css/main.363a26e6.css.map",
+    "main.629498d1.js.map": "/coin-market-info/static/js/main.629498d1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.363a26e6.css",
+    "static/js/main.629498d1.js"
+  ]
+}
