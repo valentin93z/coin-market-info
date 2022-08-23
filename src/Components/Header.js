@@ -23,7 +23,7 @@ const Header = () => {
                 <Toolbar>
                     <Typography
                         className='title'
-                        onClick={() => navigate('/')}
+                        onClick={() => navigate('/coin-market-info')}
                         variant='h6'
                     >
                         Coin Market
