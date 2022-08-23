@@ -1,3 +1,50 @@
-h1 {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: gold;
+}
+
+.App {
+  background-color: #14161a;
+  color: white;
+  min-height: 100vh;
+}
+
+.title {
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: bold !important;
+  color: gold;
+  flex: 1;
+  cursor: pointer;
+}
+
+.banner {
+  background: url('./img/banner.jpg');
+}
+
+.bannerContainer {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 25px;
+}
+
+.tagline {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
