@@ -67,10 +67,23 @@ a {
   font-family: "Montserrat";
 }
 
+.tableContainer {
+  border-radius: 5px;
+}
+
 .row {
+  background-color: #16171a;
   cursor: pointer;
 }
 
 .row:hover {
   background-color: #131111;
+}
+
+.pagination li button {
+  color: gold;
+}
+
+.pagination li div {
+  color: gold;
 }

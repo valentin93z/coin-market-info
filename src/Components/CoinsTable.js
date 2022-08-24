@@ -1,4 +1,4 @@
-import { Container, createTheme, LinearProgress, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, ThemeProvider, Typography } from '@mui/material';
+import { Container, createTheme, LinearProgress, Pagination, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, ThemeProvider, Typography } from '@mui/material';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { CoinList } from '../config/api';
@@ -11,6 +11,7 @@ const CoinsTable = () => {
     const [coins, setCoins] = useState([]);
     const [loading, setLoading] = useState(false);
     const [search, setSearch] = useState('');
+    const [page, setPage] = useState(1);
 
     const { currency, symbol } = CryptoState();
     const navigate = useNavigate();
@@ -53,13 +54,13 @@ const CoinsTable = () => {
                 style={{marginBottom: 20}}
                 onChange={(e) => setSearch(e.target.value)}
             />
-            <TableContainer>
+            <TableContainer className='tableContainer'>
                 {
                     loading ? (
                         <LinearProgress style={{ background: 'gold' }} />
                     ) : (
                         <Table>
-                            <TableHead style={{ backgroundColor: '#EEBC1D' }}>
+                            <TableHead style={{ backgroundColor: '#EEBC1D' }} className='tableHead'>
                                 <TableRow>
                                     {
                                         ['Coin', 'Price', '24h Change', 'Market Cap'].map((head) => (
@@ -76,7 +77,7 @@ const CoinsTable = () => {
                             </TableHead>
                             <TableBody>
                                 {
-                                    handleSearch().map((row) => {
+                                    handleSearch().slice((page - 1) * 10, (page - 1) * 10 + 10).map((row) => {
                                         const profit = row.price_change_percentage_24h > 0;
                                         return (
                                             <TableRow key={row.name} className='row' onClick={() => navigate(`/coins/${row.id}`)}>
@@ -107,6 +108,21 @@ const CoinsTable = () => {
                     )
                 }
             </TableContainer>
+            <Pagination
+                count={(handleSearch()?.length / 10).toFixed(0)}
+                className='pagination'
+                style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    width: '100%',
+                    padding: 20,
+                    color: 'gold'
+                }}
+                onChange={(_, value) => {
+                    setPage(value);
+                    window.scroll(0, 450);
+                }}
+            />
         </Container>
     </ThemeProvider>
   )
