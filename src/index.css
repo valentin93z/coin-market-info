@@ -66,3 +66,11 @@ a {
   font-weight: bold;
   font-family: "Montserrat";
 }
+
+.row {
+  cursor: pointer;
+}
+
+.row:hover {
+  background-color: #131111;
+}

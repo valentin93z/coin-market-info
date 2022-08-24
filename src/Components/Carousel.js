@@ -37,7 +37,7 @@ const Carousel = () => {
             {coin?.symbol}
             &nbsp;
             <span style={{ color: profit ? 'rgb(14, 203, 129)' : 'red', fontWeight: '500' }}>
-              {profit && '+'} {coin?.price_change_percentage_24h?.toFixed(2)}%
+              {profit && '+'}{coin?.price_change_percentage_24h?.toFixed(2)}%
             </span>
           </span>
           <span style={{ fontSize: 22, fontWeight: 'bold' }}>
