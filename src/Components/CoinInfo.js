@@ -4,11 +4,11 @@ import { CryptoState } from '../CryptoContext';
 import { HistoricalChart } from '../config/api';
 import { CircularProgress, createTheme, ThemeProvider } from '@mui/material';
 import { Chart, Line } from 'react-chartjs-2';
-import { Chart as ChartJS, LineController, LineElement, PointElement, LinearScale, Title, CategoryScale } from 'chart.js';
+import { Chart as ChartJS, LineController, LineElement, PointElement, LinearScale, Title, Tooltip, Legend, CategoryScale } from 'chart.js';
 import { chartDays } from '../config/data';
 import SelectButton from './SelectButton';
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, LineController, Title);
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, LineController, Title, Tooltip, Legend);
 
 const CoinInfo = ({ coin }) => {
 
@@ -44,10 +44,16 @@ const CoinInfo = ({ coin }) => {
               data={{
                 labels: historicalData.map((coin) => {
                   let date = new Date(coin[0]);
-                  let time = date.getHours() > 12
+                  let hours = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+                  let minutes = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+                  let time = `${hours}:${minutes}`;
+
+                  {/*
+                    let time = date.getHours() > 12
                     ? `${date.getHours() - 12}:${date.getMinutes()} PM`
                     : `${date.getHours()}:${date.getMinutes()} AM`
-
+                  */}
+                  
                   return days === 1 ? time : date.toLocaleDateString();
                 }),
                 datasets: [
@@ -63,7 +69,7 @@ const CoinInfo = ({ coin }) => {
                   point: {
                     radius: 1,
                   }
-                }
+                },
               }}
             />
             <div style={{

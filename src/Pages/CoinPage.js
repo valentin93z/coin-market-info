@@ -24,9 +24,6 @@ const CoinPage = () => {
     fetchCoin();
   }, [])
 
-  
-
-  console.log(coin);
 
   if (!coin) return <LinearProgress color='primary' />
 

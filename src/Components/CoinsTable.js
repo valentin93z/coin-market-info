@@ -39,8 +39,6 @@ const CoinsTable = () => {
         ))
     }
 
-    console.log(coins);
-
   return (
     <ThemeProvider theme={darkTheme}>
         <Container style={{ textAlign: 'center' }}>
@@ -52,7 +50,7 @@ const CoinsTable = () => {
                 variant='outlined'
                 fullWidth
                 style={{marginBottom: 20}}
-                onChange={(e) => setSearch(e.target.value)}
+                onChange={(e) => setSearch(e.target.value.toLowerCase())}
             />
             <TableContainer className='tableContainer'>
                 {
