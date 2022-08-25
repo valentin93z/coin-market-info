@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/coin-market-info/static/css/main.18cb6472.css",
-    "main.js": "/coin-market-info/static/js/main.188d1772.js",
+    "main.js": "/coin-market-info/static/js/main.a6d91960.js",
     "static/media/banner.jpg": "/coin-market-info/static/media/banner.19419d69e5001e322fee.jpg",
     "index.html": "/coin-market-info/index.html",
     "main.18cb6472.css.map": "/coin-market-info/static/css/main.18cb6472.css.map",
-    "main.188d1772.js.map": "/coin-market-info/static/js/main.188d1772.js.map"
+    "main.a6d91960.js.map": "/coin-market-info/static/js/main.a6d91960.js.map"
   },
   "entrypoints": [
     "static/css/main.18cb6472.css",
-    "static/js/main.188d1772.js"
+    "static/js/main.a6d91960.js"
   ]
 }
